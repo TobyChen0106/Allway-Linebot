@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'GillSansMT';
+    src: local('GillSansMT'), url('../fonts/GillSansMT.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'GenRyuMinTW-SemiBold-TTF';
+    src: local('GenRyuMinTW-SemiBold-TTF'), url('../fonts/GenRyuMinTW-SemiBold-TTF.ttf') format('truetype');
+}
+
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+.chinese-font {
+    font-family: 'cwTeXYen', sans-serif;
+}
+
+.row {
+    max-width: 100vw;
+    text-align: center;
+}
+
+.select-cards-title-wrapper {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-image {
+    height: 5rem;
+    width: 5rem;
+}
+
+.select-cards-title {
+    font-size: 1.6rem;
+    height: 5rem;
+    width: auto;
+    line-height: 5rem;
+}
+
+.seletion-subtitle-wrapper {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+    font-size: 1rem;
+}
