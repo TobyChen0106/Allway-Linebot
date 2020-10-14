@@ -63,10 +63,13 @@ def check_rich_menu(line_id):
     if customer:
         if customer['Store_Id'] == 1: # admin
             line_bot_api.link_rich_menu_to_user(line_id, admin_rich_menu_id)
+            print (1)
         else:
             line_bot_api.link_rich_menu_to_user(line_id, default_rich_menu_id)
+            print (2)
     else:
         line_bot_api.link_rich_menu_to_user(line_id, default_rich_menu_id)
+        print (3)
 
 
 @app.route("/api/fix", methods=['POST'])
@@ -133,10 +136,12 @@ def handle_message(event):
     # 如果Line_Id搜不到，檢查該訊息是不是傳password
     if not customer:
         auth_customer = get_element_from_list(customers, lambda x: x['Password']==event.message.text)
-        # 找到password的話把修改該用戶的Line_Id
+        # 找到password的話修改該用戶的Line_Id
         if auth_customer:
             data = {'Customer_Id': auth_customer['Customer_Id'],"Password": auth_customer['Password'], 'Line_Id': event.source.user_id}
             r = requests.put(root_url+'Api/Repair/UpdateCustomerLineId', data=data)
+            if auth_customer['Store_Id'] == 1:
+                line_bot_api.link_rich_menu_to_user(event.source.user_id, admin_rich_menu_id)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"歡迎使用奈斯派索報修系統！您的個人資料如下：\n{auth_customer}"))
         # 否則請他輸入password
         else:

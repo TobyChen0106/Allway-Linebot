@@ -24,7 +24,7 @@ if __name__ == "__main__":
     admin_rich_menu = RichMenu(
         size=RichMenuSize(width=2500, height=1600),
         selected=True,
-        name="default_rich_menu",
+        name="admin_rich_menu",
         chat_bar_text="Tap here",
         areas=[
             RichMenuArea(
