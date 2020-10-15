@@ -41,7 +41,7 @@ if __name__ == "__main__":
             action=URIAction(uri="https://liff.line.me/1654207080-9E5Ba1vl")),
             RichMenuArea(
             bounds=RichMenuBounds(x=1689, y=825, width=750, height=700),
-            action=URIAction(uri="http://allway.southeastasia.cloudapp.azure.com/devallwayweb/interface.html")),
+            action=URIAction(uri="http://allway.southeastasia.cloudapp.azure.com/devallwayweb/loginfordevice.html?PageType=3")),
         ]
     )
     rich_menu_id = line_bot_api.create_rich_menu(rich_menu=admin_rich_menu)
